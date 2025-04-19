@@ -1,6 +1,6 @@
 package exceptions;
-
-public class EmptyStudentListException extends RuntimeException {
+// EmptyStudentListException.java
+public class EmptyStudentListException extends Exception {
     public EmptyStudentListException(String message) {
         super(message);
     }
