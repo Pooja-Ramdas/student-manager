@@ -9,8 +9,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StudentOperations ops = new StudentOperations();
-
         while (true) {
+            long prn = 0;
+            String name = "";
+            String dob = "";
+            double marks = 0.0;
             System.out.println("\n1. Add\n2. Display\n3. Search PRN\n4. Update\n5. Delete\n6. Exit");
             System.out.print("Choose: ");
             int ch = sc.nextInt();
@@ -18,49 +21,52 @@ public class Main {
 
             try {
                 switch (ch) {
-                    case 1 -> {
+                    case 1:
                         System.out.print("Name: ");
-                        String name = sc.nextLine();
+                        name = sc.nextLine();
                         System.out.print("PRN: ");
-                        long prn = sc.nextLong();
+                        prn = sc.nextLong();
                         sc.nextLine();
                         System.out.print("DOB: ");
-                        String dob = sc.nextLine();
+                        dob = sc.nextLine();
                         System.out.print("Marks: ");
-                        double marks = sc.nextDouble();
+                        marks = sc.nextDouble();
                         ops.addStudent(new Student(name, prn, dob, marks));
                         System.out.println("Student added.");
-                    }
-                    case 2 -> ops.displayStudents();
-                    case 3 -> {
+                        break;
+                    case 2:
+                        ops.displayStudents();
+                        break;
+                    case 3:
                         System.out.print("PRN: ");
-                        long prn = sc.nextLong();
+                        prn = sc.nextLong();
                         System.out.println(ops.searchByPRN(prn));
-                    }
-                    case 4 -> {
+                        break;
+                    case 4:
                         System.out.print("PRN to update: ");
-                        long prn = sc.nextLong();
+                        prn = sc.nextLong();
                         sc.nextLine();
                         System.out.print("New Name: ");
-                        String name = sc.nextLine();
+                        name = sc.nextLine();
                         System.out.print("New DOB: ");
-                        String dob = sc.nextLine();
+                        dob = sc.nextLine();
                         System.out.print("New Marks: ");
-                        double marks = sc.nextDouble();
+                        marks = sc.nextDouble();
                         ops.updateStudent(prn, name, dob, marks);
                         System.out.println("Updated.");
-                    }
-                    case 5 -> {
+                        break;
+                    case 5:
                         System.out.print("PRN to delete: ");
-                        long prn = sc.nextLong();
+                        prn = sc.nextLong();
                         ops.deleteStudent(prn);
                         System.out.println("Deleted.");
-                    }
-                    case 6 -> {
+                        break;
+                    case 6:
                         System.out.println("Exiting!");
                         return;
-                    }
-                    default -> System.out.println(" ");
+                    default:
+                        System.out.println(" ");
+                        break;
                 }
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
