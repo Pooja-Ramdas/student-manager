@@ -1,7 +1,7 @@
 #### student-manager
 # Student Data Entry System (With Custom Exceptions)
 
-## Overview
+### Overview
 This system uses custom exception handling to manage various runtime scenarios and maintain functionality.
 ---
 
@@ -44,5 +44,4 @@ These exceptions help ensure that the user receives clear feedback in case of in
 
 ---
 
-## Directory Structure
 
